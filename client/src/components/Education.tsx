@@ -35,13 +35,16 @@ export default function Education() {
   }, [emblaApi]);
 
   useEffect(() => {
-    if (!api || !api.plugins() || !api.plugins().autoplay) return;
+    if (!api) return;
     
+    const autoplayPlugin = api.plugins()?.autoplay;
+    if (!autoplayPlugin) return;
+
     if (isHovered) {
-      api.plugins().autoplay.stop();
+      autoplayPlugin.stop();
     } else {
-      api.plugins().autoplay.reset();
-      api.plugins().autoplay.play();
+      autoplayPlugin.reset();
+      autoplayPlugin.play();
     }
   }, [api, isHovered]);
 
