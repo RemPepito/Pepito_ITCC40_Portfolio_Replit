@@ -3,7 +3,7 @@ import { FaChevronDown } from "react-icons/fa";
 
 export default function Header() {
   return (
-    <header className="relative h-screen flex items-center justify-center overflow-hidden">
+    <header className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
       <div className="absolute inset-0 z-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent opacity-30"></div>
       </div>

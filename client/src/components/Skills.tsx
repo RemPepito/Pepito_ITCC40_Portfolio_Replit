@@ -69,10 +69,10 @@ export default function Skills() {
           Technical <span className="text-primary">Skills</span>
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-          <div className="w-full md:w-1/2 lg:w-2/5">
+          <div className="w-full md:w-1/2 lg:w-3/5">
             <div className="monitor-frame">
-              <div className="monitor-screen p-8">
-                <div className="h-64 flex items-center justify-center">
+              <div className="monitor-screen">
+                <div className="w-full aspect-video flex items-center p-8">
                   {technicalSkills.map((skill, index) => (
                     <SkillItem
                       key={skill.id}

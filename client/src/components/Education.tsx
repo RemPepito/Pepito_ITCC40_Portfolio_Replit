@@ -36,7 +36,7 @@ export default function Education() {
   return (
     <AnimatedSection id="education" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 relative fade-in-section">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative fade-in-section">
           <span className="text-primary">Education</span> & Certifications
         </h2>
         <div className="max-w-3xl mx-auto relative" data-parallax="0.1">
@@ -51,12 +51,12 @@ export default function Education() {
                 ease: "easeOut"
               }}
               viewport={{ once: true, margin: "-100px" }}
-              className="relative pl-8 sm:pl-32 py-6 group fade-in-section"
+              className="relative pl-8 sm:pl-32 py-8 mb-8 group fade-in-section"
             >
               <motion.div 
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                className="flex flex-col sm:flex-row items-start mb-1 group-hover:text-primary"
+                className="flex flex-col sm:flex-row items-start mb-4 group-hover:text-primary"
               >
                 <motion.span 
                   whileHover={{ 
@@ -64,11 +64,11 @@ export default function Education() {
                     rotate: [0, 10, -10, 0],
                   }}
                   transition={{ duration: 0.5 }}
-                  className={`absolute left-0 sm:left-24 top-6 flex items-center justify-center w-10 h-10 bg-${item.color} text-white rounded-full shadow-md`}
+                  className="absolute left-0 sm:left-24 top-8 flex items-center justify-center w-10 h-10 bg-primary text-white rounded-full shadow-md"
                 >
                   {item.icon}
                 </motion.span>
-                <div className={`w-full sm:w-24 text-sm mb-2 sm:mb-0 sm:text-right sm:mr-8 text-${item.color} font-semibold`}>
+                <div className="w-full sm:w-24 text-sm mb-2 sm:mb-0 sm:text-right sm:mr-8 text-primary font-semibold">
                   {item.years}
                 </div>
                 <div className="flex-grow">
