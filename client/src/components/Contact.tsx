@@ -49,7 +49,7 @@ export default function Contact() {
   ];
 
   return (
-    <AnimatedSection id="contact" className="py-24 bg-secondary text-white">
+    <AnimatedSection id="contact" className="py-24 bg-[#091022] text-white">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Get In <span className="text-accent">Touch</span>

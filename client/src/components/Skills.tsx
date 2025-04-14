@@ -148,20 +148,41 @@ export default function Skills() {
             </div>
           </div>
           <div className="w-full md:w-1/2 lg:w-1/3 space-y-6">
-            <div className="skill-text p-6 bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+            <motion.div 
+              className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
+              whileHover={{ 
+                scale: 1.02, 
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+                borderColor: "rgba(79, 70, 229, 0.4)"
+              }}
+            >
               <h3 className="text-xl font-semibold text-primary mb-2">Network Administration</h3>
-              <p>Proficient in configuring and maintaining network infrastructure, troubleshooting connectivity issues, and implementing security protocols.</p>
-            </div>
+              <p className="text-gray-300">Proficient in configuring and maintaining network infrastructure, troubleshooting connectivity issues, and implementing security protocols.</p>
+            </motion.div>
             
-            <div className="skill-text p-6 bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+            <motion.div 
+              className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
+              whileHover={{ 
+                scale: 1.02, 
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+                borderColor: "rgba(79, 70, 229, 0.4)"
+              }}
+            >
               <h3 className="text-xl font-semibold text-primary mb-2">System Management</h3>
-              <p>Experience with server configuration, user management, and system optimization for maximum performance and security.</p>
-            </div>
+              <p className="text-gray-300">Experience with server configuration, user management, and system optimization for maximum performance and security.</p>
+            </motion.div>
             
-            <div className="skill-text p-6 bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+            <motion.div 
+              className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
+              whileHover={{ 
+                scale: 1.02, 
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+                borderColor: "rgba(79, 70, 229, 0.4)"
+              }}
+            >
               <h3 className="text-xl font-semibold text-primary mb-2">Cybersecurity</h3>
-              <p>Knowledge of security best practices, vulnerability assessment, and implementing protective measures against common threats.</p>
-            </div>
+              <p className="text-gray-300">Knowledge of security best practices, vulnerability assessment, and implementing protective measures against common threats.</p>
+            </motion.div>
           </div>
         </div>
       </div>
