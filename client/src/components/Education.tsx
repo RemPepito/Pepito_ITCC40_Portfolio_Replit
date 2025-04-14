@@ -11,21 +11,22 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import AutoplayPlugin from "embla-carousel-autoplay";
 
 export default function Education() {
   const [isHovered, setIsHovered] = useState(false);
   const [api, setApi] = useState<any>();
   
-  const autoplayOptions = {
+  const autoplay = AutoplayPlugin({
     delay: 4000,
     stopOnInteraction: false,
-    rootNode: (emblaRoot: any) => emblaRoot.parentElement,
-  };
+    rootNode: (emblaRoot) => emblaRoot.parentElement,
+  });
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay(autoplayOptions)
-  ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true }, 
+    [autoplay]
+  );
 
   useEffect(() => {
     if (emblaApi) {
@@ -34,11 +35,13 @@ export default function Education() {
   }, [emblaApi]);
 
   useEffect(() => {
-    if (api && isHovered) {
-      api.plugins().autoplay.stop();
-    } else if (api && !isHovered) {
-      api.plugins().autoplay.reset();
-      api.plugins().autoplay.play();
+    if (!api) return;
+    
+    if (isHovered) {
+      autoplay.stop();
+    } else {
+      autoplay.reset();
+      autoplay.play();
     }
   }, [api, isHovered]);
 
@@ -100,13 +103,9 @@ export default function Education() {
           <Carousel
             ref={emblaRef}
             className="w-full"
-            opts={{
-              align: "start",
-              loop: true,
-            }}
           >
             <CarouselContent>
-              {educationItems.map((item, index) => (
+              {educationItems.map((item) => (
                 <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
                   <motion.div
                     onHoverStart={() => setIsHovered(true)}
