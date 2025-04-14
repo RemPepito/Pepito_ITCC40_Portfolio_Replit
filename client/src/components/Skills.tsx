@@ -97,12 +97,13 @@ export default function Skills() {
     <AnimatedSection id="skills" className="py-24 bg-[#1a2038]">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-          Technical <span className="text-primary">Skills</span>
+          Skills
         </h2>
         <div className="flex flex-col items-center justify-center gap-12 mb-16">
           <div className="w-full md:w-4/5 lg:w-4/5 mx-auto">
-            <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
-                <div className="w-full aspect-video flex items-center justify-center overflow-hidden">
+            <div className="monitor-frame">
+              <div className="monitor-screen">
+                <div className="w-full aspect-video flex items-center justify-center p-4 md:p-6 overflow-hidden">
                   <AnimatePresence custom={direction} mode="wait">
                     <motion.div
                       key={activeSkillIndex}
@@ -185,7 +186,6 @@ export default function Skills() {
             <p className="text-gray-300">Knowledge of security best practices, vulnerability assessment, and implementing protective measures against common threats.</p>
           </motion.div>
         </div>
-      </div>
       </div>
     </AnimatedSection>
   );
