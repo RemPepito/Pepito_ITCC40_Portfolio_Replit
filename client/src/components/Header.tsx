@@ -18,7 +18,7 @@ export default function Header() {
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prevIndex) => (prevIndex + 1) % hellos.length);
-    }, 2000);
+    }, 3000); // Increased to 3 seconds for better readability
 
     return () => clearInterval(interval);
   }, [hellos.length]);
@@ -29,8 +29,8 @@ export default function Header() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent opacity-30"></div>
       </div>
       <div className="container mx-auto px-6 z-10">
-        <div className="mb-8">
-          <div className="flex justify-center h-32 md:h-40 lg:h-44 mb-10">
+        <div className="mt-12 md:mt-16 mb-4 md:mb-0">
+          <div className="flex justify-center h-32 md:h-44 lg:h-52">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -41,7 +41,7 @@ export default function Header() {
                   duration: 0.5, 
                   ease: "easeInOut" 
                 }}
-                className="text-6xl md:text-7xl lg:text-8xl font-bold text-primary absolute"
+                className="text-7xl md:text-8xl lg:text-9xl font-bold text-primary absolute"
               >
                 {hellos[currentIndex]}
               </motion.div>

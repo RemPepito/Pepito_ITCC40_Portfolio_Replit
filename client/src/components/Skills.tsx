@@ -112,10 +112,10 @@ export default function Skills() {
                       initial="enter"
                       animate="center"
                       exit="exit"
-                      className="flex items-center w-full h-full"
+                      className="flex flex-col items-center justify-center w-full h-full text-center"
                     >
                       <motion.div 
-                        className="text-7xl md:text-8xl flex-shrink-0 mr-8" 
+                        className="text-8xl md:text-9xl mb-6" 
                         style={{ color: currentSkill.color }}
                         animate={{ rotateY: [0, 360], scale: [1, 1.1, 1] }}
                         transition={{
@@ -127,9 +127,9 @@ export default function Skills() {
                         {currentSkill.icon}
                       </motion.div>
                       
-                      <div className="flex flex-col items-start flex-1">
+                      <div className="flex flex-col items-center">
                         <motion.h3 
-                          className="text-2xl md:text-3xl font-semibold text-white mb-3"
+                          className="text-3xl md:text-4xl font-bold text-white mb-4"
                           animate={{ scale: [1, 1.05, 1] }}
                           transition={{
                             duration: 1.5,
@@ -139,7 +139,7 @@ export default function Skills() {
                         >
                           {currentSkill.title}
                         </motion.h3>
-                        <p className="text-left text-gray-300 text-lg md:text-xl">{currentSkill.description}</p>
+                        <p className="text-center text-gray-300 text-xl md:text-2xl max-w-2xl">{currentSkill.description}</p>
                       </div>
                     </motion.div>
                   </AnimatePresence>

@@ -78,27 +78,25 @@ export default function Education() {
                   boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
                 }}
               >
-                <div className="flex items-start gap-4 mb-4">
+                <div className="flex flex-col items-center text-center mb-4">
                   <motion.div 
                     whileHover={{ 
                       scale: 1.2,
                       rotate: [0, 10, -10, 0],
                     }}
                     transition={{ duration: 0.5 }}
-                    className="flex-shrink-0 flex items-center justify-center w-12 h-12 bg-primary text-white rounded-full shadow-md"
+                    className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full shadow-md mb-4 text-xl"
                   >
                     {item.icon}
                   </motion.div>
-                  <div className="flex-grow">
+                  <div className="w-full">
                     <div className="text-sm text-primary font-semibold mb-1">
                       {item.years}
                     </div>
-                    <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                    <p className="text-sm text-gray-400">{item.subtitle}</p>
+                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-sm text-gray-400 mb-3">{item.subtitle}</p>
+                    <p className="text-gray-300">{item.description}</p>
                   </div>
-                </div>
-                <div className="mt-3">
-                  <p className="text-gray-300">{item.description}</p>
                 </div>
               </motion.div>
             ))}
