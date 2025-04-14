@@ -97,23 +97,21 @@ export default function Skills() {
     <AnimatedSection id="skills" className="py-24 bg-[#1a2038]">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-          Skills
+          Technical Skills
         </h2>
         <div className="flex flex-col items-center justify-center gap-12 mb-16">
           <div className="w-full md:w-4/5 lg:w-4/5 mx-auto">
-            <div className="monitor-frame">
-              <div className="monitor-screen">
-                <div className="w-full aspect-video flex items-center justify-center p-4 md:p-6 overflow-hidden">
-                  <AnimatePresence custom={direction} mode="wait">
-                    <motion.div
-                      key={activeSkillIndex}
-                      custom={direction}
-                      variants={slideVariants}
-                      initial="enter"
-                      animate="center"
-                      exit="exit"
-                      className="flex flex-col items-center justify-center w-full h-full text-center"
-                    >
+            <div className="w-full flex items-center justify-center p-4 md:p-6 overflow-hidden">
+              <AnimatePresence custom={direction} mode="wait">
+                <motion.div
+                  key={activeSkillIndex}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  className="flex flex-col items-center justify-center w-full h-full text-center"
+                >
                       <motion.div 
                         className="text-8xl md:text-9xl mb-6" 
                         style={{ color: currentSkill.color }}

@@ -42,7 +42,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           <a href="#" className="text-xl font-bold text-primary">
-            Remwell B. Pepito
+            RBP
           </a>
           
           <div className="hidden md:flex space-x-6">
