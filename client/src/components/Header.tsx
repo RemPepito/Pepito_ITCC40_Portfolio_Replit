@@ -1,20 +1,61 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
+import profileImage from "@assets/image_1744644139845.png";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const hellos = [
+    "HELLO", "HOLA", "BONJOUR", "CIAO", "HALLO", 
+    "OLÁ", "ПРИВЕТ", "你好", "こんにちは", "안녕하세요", 
+    "MERHABA", "ΓΕΙΑ ΣΑΣ", "नमस्ते", "مرحبا", "שלום", 
+    "SAWUBONA", "KUMUSTA", "SAWASDEE", "XIN CHÀO", "SALAM"
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1); // 1 for right, -1 for left
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDirection(1);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % hellos.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [hellos.length]);
+
   return (
     <header className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
       <div className="absolute inset-0 z-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent opacity-30"></div>
       </div>
       <div className="container mx-auto px-6 z-10">
+        <div className="mb-8">
+          <div className="flex justify-center h-32 md:h-40 lg:h-44 mb-10">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, y: 20, x: 50 * direction }}
+                animate={{ opacity: 1, y: 0, x: 0 }}
+                exit={{ opacity: 0, y: -20, x: -50 * direction }}
+                transition={{ 
+                  duration: 0.5, 
+                  ease: "easeInOut" 
+                }}
+                className="text-6xl md:text-7xl lg:text-8xl font-bold text-primary absolute"
+              >
+                {hellos[currentIndex]}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+        
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="w-full md:w-1/2 text-center md:text-left">
+          <div className="w-full md:w-1/2 text-center md:text-left mt-10">
             <motion.h1 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white"
             >
               Remwell B. Pepito
             </motion.h1>
@@ -28,7 +69,7 @@ export default function Header() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="space-y-4"
+              className="space-y-4 text-gray-200"
             >
               <p className="text-lg md:text-xl">Future graduate of <span className="font-semibold">Xavier University Ateneo de Cagayan</span>, Batch 2026</p>
               <p className="text-lg md:text-xl">Future <span className="font-semibold">Network Administrator</span></p>
@@ -42,9 +83,9 @@ export default function Header() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="w-full md:w-1/3 flex justify-center md:justify-end"
           >
-            <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-xl">
+            <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-primary shadow-xl">
               <img 
-                src="https://placehold.co/400x400/e2e8f0/1e293b?text=RP" 
+                src={profileImage}
                 alt="Professional headshot of Remwell B. Pepito" 
                 className="w-full h-full object-cover"
               />

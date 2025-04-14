@@ -99,11 +99,11 @@ export default function Skills() {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
           Technical <span className="text-primary">Skills</span>
         </h2>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-          <div className="w-full md:w-1/2 lg:w-3/5">
+        <div className="flex flex-col items-center justify-center gap-12 mb-16">
+          <div className="w-full md:w-4/5 lg:w-4/5 mx-auto">
             <div className="monitor-frame">
               <div className="monitor-screen">
-                <div className="w-full aspect-video flex items-center justify-center p-8 overflow-hidden">
+                <div className="w-full aspect-video flex items-center justify-center p-4 md:p-6 overflow-hidden">
                   <AnimatePresence custom={direction} mode="wait">
                     <motion.div
                       key={activeSkillIndex}
@@ -115,7 +115,7 @@ export default function Skills() {
                       className="flex items-center w-full h-full"
                     >
                       <motion.div 
-                        className="text-6xl flex-shrink-0 mr-6" 
+                        className="text-7xl md:text-8xl flex-shrink-0 mr-8" 
                         style={{ color: currentSkill.color }}
                         animate={{ rotateY: [0, 360], scale: [1, 1.1, 1] }}
                         transition={{
@@ -127,9 +127,9 @@ export default function Skills() {
                         {currentSkill.icon}
                       </motion.div>
                       
-                      <div className="flex flex-col items-start">
+                      <div className="flex flex-col items-start flex-1">
                         <motion.h3 
-                          className="text-2xl font-semibold text-white mb-2"
+                          className="text-2xl md:text-3xl font-semibold text-white mb-3"
                           animate={{ scale: [1, 1.05, 1] }}
                           transition={{
                             duration: 1.5,
@@ -139,7 +139,7 @@ export default function Skills() {
                         >
                           {currentSkill.title}
                         </motion.h3>
-                        <p className="text-left text-gray-300">{currentSkill.description}</p>
+                        <p className="text-left text-gray-300 text-lg md:text-xl">{currentSkill.description}</p>
                       </div>
                     </motion.div>
                   </AnimatePresence>
@@ -147,43 +147,44 @@ export default function Skills() {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2 lg:w-1/3 space-y-6">
-            <motion.div 
-              className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
-              whileHover={{ 
-                scale: 1.02, 
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
-                borderColor: "rgba(79, 70, 229, 0.4)"
-              }}
-            >
-              <h3 className="text-xl font-semibold text-primary mb-2">Network Administration</h3>
-              <p className="text-gray-300">Proficient in configuring and maintaining network infrastructure, troubleshooting connectivity issues, and implementing security protocols.</p>
-            </motion.div>
-            
-            <motion.div 
-              className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
-              whileHover={{ 
-                scale: 1.02, 
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
-                borderColor: "rgba(79, 70, 229, 0.4)"
-              }}
-            >
-              <h3 className="text-xl font-semibold text-primary mb-2">System Management</h3>
-              <p className="text-gray-300">Experience with server configuration, user management, and system optimization for maximum performance and security.</p>
-            </motion.div>
-            
-            <motion.div 
-              className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
-              whileHover={{ 
-                scale: 1.02, 
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
-                borderColor: "rgba(79, 70, 229, 0.4)"
-              }}
-            >
-              <h3 className="text-xl font-semibold text-primary mb-2">Cybersecurity</h3>
-              <p className="text-gray-300">Knowledge of security best practices, vulnerability assessment, and implementing protective measures against common threats.</p>
-            </motion.div>
-          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <motion.div 
+            className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
+            whileHover={{ 
+              scale: 1.02, 
+              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+              borderColor: "rgba(79, 70, 229, 0.4)"
+            }}
+          >
+            <h3 className="text-xl font-semibold text-primary mb-2">Network Administration</h3>
+            <p className="text-gray-300">Proficient in configuring and maintaining network infrastructure, troubleshooting connectivity issues, and implementing security protocols.</p>
+          </motion.div>
+          
+          <motion.div 
+            className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
+            whileHover={{ 
+              scale: 1.02, 
+              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+              borderColor: "rgba(79, 70, 229, 0.4)"
+            }}
+          >
+            <h3 className="text-xl font-semibold text-primary mb-2">System Management</h3>
+            <p className="text-gray-300">Experience with server configuration, user management, and system optimization for maximum performance and security.</p>
+          </motion.div>
+          
+          <motion.div 
+            className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
+            whileHover={{ 
+              scale: 1.02, 
+              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
+              borderColor: "rgba(79, 70, 229, 0.4)"
+            }}
+          >
+            <h3 className="text-xl font-semibold text-primary mb-2">Cybersecurity</h3>
+            <p className="text-gray-300">Knowledge of security best practices, vulnerability assessment, and implementing protective measures against common threats.</p>
+          </motion.div>
         </div>
       </div>
     </AnimatedSection>
