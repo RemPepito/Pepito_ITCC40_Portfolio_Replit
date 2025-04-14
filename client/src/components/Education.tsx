@@ -1,9 +1,47 @@
 
+import { useState, useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaSchool, FaCertificate, FaAward, FaUniversity } from "react-icons/fa";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function Education() {
+  const [isHovered, setIsHovered] = useState(false);
+  const [api, setApi] = useState<any>();
+  
+  const autoplayOptions = {
+    delay: 4000,
+    stopOnInteraction: false,
+    rootNode: (emblaRoot: any) => emblaRoot.parentElement,
+  };
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay(autoplayOptions)
+  ]);
+
+  useEffect(() => {
+    if (emblaApi) {
+      setApi(emblaApi);
+    }
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (api && isHovered) {
+      api.plugins().autoplay.stop();
+    } else if (api && !isHovered) {
+      api.plugins().autoplay.reset();
+      api.plugins().autoplay.play();
+    }
+  }, [api, isHovered]);
+
   const educationItems = [
     {
       id: "kong-hua-school",
@@ -53,60 +91,59 @@ export default function Education() {
   ];
   
   return (
-    <AnimatedSection id="education" className="py-24 bg-gray-950">
+    <AnimatedSection id="education" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative text-foreground">
           <span className="text-primary">Education</span> & Certifications
         </h2>
         <div className="max-w-6xl mx-auto relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 card-container">
-            {educationItems.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, margin: "-100px" }}
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { 
-                    opacity: 1, 
-                    y: 0,
-                    transition: { 
-                      duration: 0.7, 
-                      delay: index * 0.1,
-                      ease: "easeOut"
-                    }
-                  }
-                }}
-                className="relative p-6 rounded-xl bg-gray-800 border border-gray-700 shadow-lg group hover:border-primary/40 transition-all duration-300"
-                whileHover={{ 
-                  scale: 1.02,
-                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
-                }}
-              >
-                <div className="flex flex-col items-center text-center mb-4">
-                  <motion.div 
+          <Carousel
+            ref={emblaRef}
+            className="w-full"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {educationItems.map((item, index) => (
+                <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
+                  <motion.div
+                    onHoverStart={() => setIsHovered(true)}
+                    onHoverEnd={() => setIsHovered(false)}
                     whileHover={{ 
-                      scale: 1.2,
-                      rotate: [0, 10, -10, 0],
+                      scale: 1.05,
+                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
                     }}
-                    transition={{ duration: 0.5 }}
-                    className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-primary text-white rounded-full shadow-md mb-4 text-xl"
+                    className="relative p-6 rounded-xl bg-card border border-border shadow-lg group transition-all duration-300 h-full"
                   >
-                    {item.icon}
-                  </motion.div>
-                  <div className="w-full">
-                    <div className="text-sm text-primary font-semibold mb-1">
-                      {item.years}
+                    <div className="flex flex-col items-center text-center mb-4">
+                      <motion.div 
+                        whileHover={{ 
+                          scale: 1.2,
+                          rotate: [0, 10, -10, 0],
+                        }}
+                        transition={{ duration: 0.5 }}
+                        className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full shadow-md mb-4 text-xl"
+                      >
+                        {item.icon}
+                      </motion.div>
+                      <div className="w-full">
+                        <div className="text-sm text-primary font-semibold mb-1">
+                          {item.years}
+                        </div>
+                        <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground mb-3">{item.subtitle}</p>
+                        <p className="text-foreground">{item.description}</p>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-sm text-gray-400 mb-3">{item.subtitle}</p>
-                    <p className="text-gray-300">{item.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </div>
     </AnimatedSection>
