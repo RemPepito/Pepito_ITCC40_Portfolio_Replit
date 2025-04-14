@@ -14,6 +14,33 @@ export default function Education() {
       color: "primary"
     },
     {
+      id: "seniorhigh",
+      years: "2020 - 2022",
+      title: "Kong Hua School",
+      subtitle: "Senior High School",
+      description: "Completed senior high school education with focus on STEM (Science, Technology, Engineering, and Mathematics) track.",
+      icon: <FaGraduationCap />,
+      color: "primary"
+    },
+    {
+      id: "juniorhigh",
+      years: "2016 - 2020",
+      title: "Kong Hua School",
+      subtitle: "Junior High School",
+      description: "Completed junior high school education with academic excellence and participation in technology-related activities and competitions.",
+      icon: <FaGraduationCap />,
+      color: "primary"
+    },
+    {
+      id: "elementary",
+      years: "2010 - 2016",
+      title: "Kong Hua School",
+      subtitle: "Elementary Education",
+      description: "Built a strong foundation in basic education with early interest in computers and technology.",
+      icon: <FaGraduationCap />,
+      color: "primary"
+    },
+    {
       id: "certification",
       years: "2024",
       title: "CCNA Certification",
@@ -21,22 +48,13 @@ export default function Education() {
       description: "Comprehensive understanding of networking concepts, routing and switching infrastructure, and enterprise network solutions.",
       icon: <FaCertificate />,
       color: "accent"
-    },
-    {
-      id: "additional",
-      years: "2023",
-      title: "Network Administration Training",
-      subtitle: "Advanced Specialization",
-      description: "Intensive training in enterprise network management, security protocols, and infrastructure design for modern organizations.",
-      icon: <FaNetworkWired />,
-      color: "primary"
     }
   ];
   
   return (
-    <AnimatedSection id="education" className="py-24 bg-white">
+    <AnimatedSection id="education" className="py-24 bg-gray-950">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative fade-in-section">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative fade-in-section text-white">
           <span className="text-primary">Education</span> & Certifications
         </h2>
         <div className="max-w-3xl mx-auto relative" data-parallax="0.1">
@@ -72,12 +90,12 @@ export default function Education() {
                   {item.years}
                 </div>
                 <div className="flex-grow">
-                  <h3 className="text-xl font-bold">{item.title}</h3>
-                  <p className="text-sm text-gray-500">{item.subtitle}</p>
+                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                  <p className="text-sm text-gray-400">{item.subtitle}</p>
                 </div>
               </motion.div>
               <div className="pl-0 sm:pl-32 mt-2">
-                <p className="text-gray-700">{item.description}</p>
+                <p className="text-gray-300">{item.description}</p>
               </div>
             </motion.div>
           ))}

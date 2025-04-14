@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import Organizations from "@/components/Organizations";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useEffect, useRef } from "react";
@@ -55,15 +57,17 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-background overflow-hidden"
+      className="min-h-screen overflow-hidden bg-[#121729] text-gray-100"
     >
       <div className="absolute inset-0 z-0 pointer-events-none" data-parallax="0.2">
-        <div className="h-full w-full bg-gradient-to-br from-primary/5 to-accent/5 opacity-70"></div>
+        <div className="h-full w-full bg-gradient-to-br from-primary/10 to-accent/10 opacity-50"></div>
       </div>
       
       <Header />
       <Skills />
       <Education />
+      <Projects />
+      <Organizations />
       <Experience />
       <Contact />
       <Footer />

@@ -94,9 +94,9 @@ export default function Skills() {
   };
 
   return (
-    <AnimatedSection id="skills" className="py-24">
+    <AnimatedSection id="skills" className="py-24 bg-[#1a2038]">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
           Technical <span className="text-primary">Skills</span>
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
