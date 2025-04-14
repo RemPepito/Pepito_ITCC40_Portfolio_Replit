@@ -1,8 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown, FaSun, FaMoon } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import profileImage from "@assets/image_1744644139845.png";
 import { useEffect, useState } from "react";
-import { Switch } from "./ui/switch";
 
 export default function Header() {
   const hellos = [
@@ -29,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header className="relative h-screen flex items-center justify-center overflow-hidden pt-16 bg-background"> {/* Added bg-gray-950 */}
+    <header className="relative h-screen flex items-center justify-center overflow-hidden pt-16 bg-gray-950"> {/* Added bg-gray-950 */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
       <div className="container mx-auto px-6 z-10">
@@ -51,7 +50,7 @@ export default function Header() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
             >
               Remwell B. Pepito
             </motion.h1>
@@ -78,14 +77,9 @@ export default function Header() {
               >
                 Get Started
               </button>
-              <div className="flex items-center gap-2 px-4 py-2 border border-primary rounded-lg">
-                <FaSun className="text-primary" />
-                <Switch 
-                  onCheckedChange={(checked) => document.documentElement.classList.toggle('dark', checked)}
-                  className="data-[state=checked]:bg-primary"
-                />
-                <FaMoon className="text-primary" />
-              </div>
+              <button className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-colors">
+                Watch Intro
+              </button>
             </motion.div>
           </div>
           <motion.div

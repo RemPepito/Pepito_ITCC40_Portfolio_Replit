@@ -126,7 +126,7 @@ export default function Skills() {
                       >
                         {currentSkill.icon}
                       </motion.div>
-
+                      
                       <div className="flex flex-col items-center">
                         <motion.h3 
                           className="text-3xl md:text-4xl font-bold text-white mb-4"
@@ -148,10 +148,10 @@ export default function Skills() {
             </div>
           </div>
         </div>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto card-container">
           <motion.div 
-            className="skill-text p-6 bg-card rounded-lg shadow-md border border-border transition-all duration-300"
+            className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
             whileHover={{ 
               scale: 1.02, 
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
@@ -161,9 +161,9 @@ export default function Skills() {
             <h3 className="text-xl font-semibold text-primary mb-2">Network Administration</h3>
             <p className="text-gray-300">Proficient in configuring and maintaining network infrastructure, troubleshooting connectivity issues, and implementing security protocols.</p>
           </motion.div>
-
+          
           <motion.div 
-            className="skill-text p-6 bg-card rounded-lg shadow-md border border-border transition-all duration-300"
+            className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
             whileHover={{ 
               scale: 1.02, 
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
@@ -173,9 +173,9 @@ export default function Skills() {
             <h3 className="text-xl font-semibold text-primary mb-2">System Management</h3>
             <p className="text-gray-300">Experience with server configuration, user management, and system optimization for maximum performance and security.</p>
           </motion.div>
-
+          
           <motion.div 
-            className="skill-text p-6 bg-card rounded-lg shadow-md border border-border transition-all duration-300"
+            className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
             whileHover={{ 
               scale: 1.02, 
               boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)",
