@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const hellos = [
-    "HELLO", "HOLA", "BONJOUR", "CIAO", "HALLO",
-    "OLÁ", "ПРИВЕТ", "你好", "こんにちは", "안녕하세요",
-    "MERHABA", "ΓΕΙΑ ΣΑΣ", "नमस्ते", "مرحبا", "שלום",
-    "SAWUBONA", "KUMUSTA", "SAWASDEE", "XIN CHÀO", "SALAM"
+    "Hello, I'm", "Hola, soy", "Bonjour, je suis", "Ciao, sono", "Hallo, ich bin",
+    "Olá, eu sou", "Привет, я", "你好，我是", "こんにちは、私は", "안녕하세요, 저는",
+    "Merhaba, ben", "Γεια σας, είμαι", "नमस्ते, मैं हूं", "مرحبا انا", "שלום אני",
+    "Sawubona, ngingu", "Kumusta, ako si", "Sawasdee, chan", "Xin chào, tôi là", "Salam, saya"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,7 +34,7 @@ export default function Header() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-xl text-primary mb-4"
+              className="text-3xl md:text-4xl text-primary mb-4"
             >
               Hello, I'm
             </motion.p>
