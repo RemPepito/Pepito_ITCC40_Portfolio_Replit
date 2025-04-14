@@ -101,9 +101,8 @@ export default function Skills() {
         </h2>
         <div className="flex flex-col items-center justify-center gap-12 mb-16">
           <div className="w-full md:w-4/5 lg:w-4/5 mx-auto">
-            <div className="monitor-frame">
-              <div className="monitor-screen">
-                <div className="w-full aspect-video flex items-center justify-center p-4 md:p-6 overflow-hidden">
+            <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
+                <div className="w-full aspect-video flex items-center justify-center overflow-hidden">
                   <AnimatePresence custom={direction} mode="wait">
                     <motion.div
                       key={activeSkillIndex}
