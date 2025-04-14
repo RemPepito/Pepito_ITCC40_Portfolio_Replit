@@ -59,7 +59,7 @@ export default function Education() {
           <span className="text-primary">Education</span> & Certifications
         </h2>
         <div className="max-w-6xl mx-auto relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 card-container">
             {educationItems.map((item, index) => (
               <motion.div
                 key={item.id}

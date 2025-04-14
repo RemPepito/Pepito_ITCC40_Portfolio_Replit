@@ -57,7 +57,7 @@ export default function AdminSkills() {
           <span className="text-primary">Administrative</span> Skills
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto card-container">
           {adminSkills.map((skill, index) => (
             <motion.div
               key={skill.id}
