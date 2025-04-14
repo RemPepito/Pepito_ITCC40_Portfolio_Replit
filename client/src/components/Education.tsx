@@ -1,30 +1,8 @@
-
-import { useState, useEffect } from "react";
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaSchool, FaCertificate, FaAward, FaUniversity } from "react-icons/fa";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import useEmblaCarousel from "embla-carousel-react";
-import AutoplayPlugin from "embla-carousel-autoplay";
 
 export default function Education() {
-  const options = { loop: true };
-  const [emblaRef] = useEmblaCarousel(options, [
-    AutoplayPlugin({
-      delay: 3000,
-      stopOnLastSnap: false,
-      stopOnInteraction: false,
-      stopOnMouseEnter: false,
-      rootNode: (emblaRoot) => emblaRoot.parentElement,
-    })
-  ]);
-
   const educationItems = [
     {
       id: "kong-hua-school",
@@ -72,51 +50,41 @@ export default function Education() {
       color: "accent"
     }
   ];
-  
+
   return (
     <AnimatedSection id="education" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative text-foreground">
           <span className="text-primary">Education</span> & Certifications
         </h2>
-        <div className="max-w-6xl mx-auto relative">
-          <Carousel
-            ref={emblaRef}
-            className="w-full"
-          >
-            <CarouselContent>
-              {educationItems.map((item) => (
-                <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
-                  <motion.div
-                    className="relative p-6 rounded-xl bg-card border border-border shadow-lg h-full"
-                  >
-                    <div className="flex flex-col items-center text-center mb-4">
-                      <motion.div 
-                        whileHover={{ 
-                          scale: 1.2,
-                          rotate: [0, 10, -10, 0],
-                        }}
-                        transition={{ duration: 0.5 }}
-                        className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full shadow-md mb-4 text-xl"
-                      >
-                        {item.icon}
-                      </motion.div>
-                      <div className="w-full">
-                        <div className="text-sm text-primary font-semibold mb-1">
-                          {item.years}
-                        </div>
-                        <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground mb-3">{item.subtitle}</p>
-                        <p className="text-foreground">{item.description}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {educationItems.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="relative p-6 rounded-xl bg-card border border-border shadow-lg h-full"
+            >
+              <div className="flex flex-col items-center text-center">
+                <motion.div 
+                  whileHover={{ scale: 1.1 }}
+                  className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-primary text-primary-foreground rounded-full shadow-md mb-4 text-xl"
+                >
+                  {item.icon}
+                </motion.div>
+                <div>
+                  <div className="text-sm text-primary font-semibold mb-1">
+                    {item.years}
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-3">{item.subtitle}</p>
+                  <p className="text-foreground">{item.description}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </AnimatedSection>
