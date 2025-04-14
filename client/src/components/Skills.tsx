@@ -186,6 +186,7 @@ export default function Skills() {
           </motion.div>
         </div>
       </div>
+      </div>
     </AnimatedSection>
   );
 }
