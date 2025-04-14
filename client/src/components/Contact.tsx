@@ -27,7 +27,23 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // In a real application, this would submit to an API
+    // Format the email content
+    const emailTo = "20220025023@my.xu.edu.ph";
+    const emailSubject = `Message from ${formData.name} via Portfolio Site`;
+    const emailBody = `
+From: ${formData.name}
+Email: ${formData.email}
+
+Message:
+${formData.message}
+    `;
+    
+    // In a production environment, this would connect to a backend API
+    // For demonstration, we'll display success toast and log the email details
+    console.log("Email would be sent to:", emailTo);
+    console.log("Subject:", emailSubject);
+    console.log("Body:", emailBody);
+    
     toast({
       title: "Message Sent",
       description: "Thank you for your message. I'll get back to you soon!",
@@ -45,7 +61,7 @@ export default function Contact() {
     { icon: <FaFacebookF />, href: "https://facebook.com/remwellpepito", label: "Facebook" },
     { icon: <FaInstagram />, href: "https://instagram.com/remwellpepito", label: "Instagram" },
     { icon: <FaLinkedinIn />, href: "https://linkedin.com/in/remwellpepito", label: "LinkedIn" },
-    { icon: <FaEnvelope />, href: "mailto:contact@remwellpepito.com", label: "Email" },
+    { icon: <FaEnvelope />, href: "mailto:20220025023@my.xu.edu.ph", label: "Email" },
   ];
 
   return (

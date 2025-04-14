@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
-import Experience from "@/components/Experience";
+import AdminSkills from "@/components/AdminSkills";
 import Projects from "@/components/Projects";
 import Organizations from "@/components/Organizations";
 import Contact from "@/components/Contact";
@@ -68,7 +68,7 @@ export default function Home() {
       <Education />
       <Projects />
       <Organizations />
-      <Experience />
+      <AdminSkills />
       <Contact />
       <Footer />
     </motion.div>
