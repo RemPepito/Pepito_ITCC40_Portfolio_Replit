@@ -14,39 +14,10 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoplayPlugin from "embla-carousel-autoplay";
 
 export default function Education() {
-  const [isHovered, setIsHovered] = useState(false);
-  const [api, setApi] = useState<any>();
-  
-  const autoplay = AutoplayPlugin({
-    delay: 4000,
-    stopOnInteraction: false,
-    rootNode: (emblaRoot) => emblaRoot.parentElement,
-  });
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(
+  const [emblaRef] = useEmblaCarousel(
     { loop: true }, 
-    [autoplay]
+    [AutoplayPlugin({ delay: 4000, stopOnInteraction: false })]
   );
-
-  useEffect(() => {
-    if (emblaApi) {
-      setApi(emblaApi);
-    }
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!api) return;
-    
-    const autoplayPlugin = api.plugins()?.autoplay;
-    if (!autoplayPlugin) return;
-
-    if (isHovered) {
-      autoplayPlugin.stop();
-    } else {
-      autoplayPlugin.reset();
-      autoplayPlugin.play();
-    }
-  }, [api, isHovered]);
 
   const educationItems = [
     {
@@ -111,13 +82,7 @@ export default function Education() {
               {educationItems.map((item) => (
                 <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
                   <motion.div
-                    onHoverStart={() => setIsHovered(true)}
-                    onHoverEnd={() => setIsHovered(false)}
-                    whileHover={{ 
-                      scale: 1.05,
-                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"
-                    }}
-                    className="relative p-6 rounded-xl bg-card border border-border shadow-lg group transition-all duration-300 h-full"
+                    className="relative p-6 rounded-xl bg-card border border-border shadow-lg h-full"
                   >
                     <div className="flex flex-col items-center text-center mb-4">
                       <motion.div 
