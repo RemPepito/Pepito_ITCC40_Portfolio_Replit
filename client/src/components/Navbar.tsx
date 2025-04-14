@@ -59,7 +59,7 @@ export default function Navbar() {
           
           <div className="md:hidden">
             <button
-              className={`text-${isScrolled ? "gray-800" : "white"} focus:outline-none`}
+              className={`${isScrolled ? "text-gray-800" : "text-primary-foreground"} focus:outline-none`}
               onClick={() => {
                 const menu = document.getElementById("mobile-menu");
                 menu?.classList.toggle("hidden");
