@@ -12,16 +12,20 @@ export default function Header() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 for right, -1 for left
+  const [direction, setDirection] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentIndex((prevIndex) => (prevIndex + 1) % hellos.length);
-    }, 3000); // Increased to 3 seconds for better readability
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [hellos.length]);
+
+  const handleGetStarted = () => {
+    document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <header className="relative h-screen flex items-center justify-center overflow-hidden pt-16 bg-gray-950"> {/* Added bg-gray-950 */}
@@ -30,14 +34,18 @@ export default function Header() {
       <div className="container mx-auto px-6 z-10">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="w-full md:w-3/5 mb-12 md:mb-0">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl md:text-4xl text-primary mb-4"
-            >
-              Hello, I'm
-            </motion.p>
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={currentIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="text-3xl md:text-4xl text-primary mb-4"
+              >
+                {hellos[currentIndex]}
+              </motion.p>
+            </AnimatePresence>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,7 +71,10 @@ export default function Header() {
               transition={{ duration: 0.7, delay: 0.6 }}
               className="mt-8 flex gap-4"
             >
-              <button className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+              <button 
+                onClick={handleGetStarted}
+                className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+              >
                 Get Started
               </button>
               <button className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-colors">

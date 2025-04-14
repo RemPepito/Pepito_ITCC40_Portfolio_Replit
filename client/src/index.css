@@ -139,6 +139,44 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  @keyframes movingGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .bg-animated {
+    background: linear-gradient(45deg, rgba(79, 70, 229, 0.1), rgba(0, 0, 0, 0.1), rgba(79, 70, 229, 0.05));
+    background-size: 400% 400%;
+    animation: movingGradient 15s ease infinite;
+  }
+
+  .card-container {
+    display: grid;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .card-container > div {
+    transition: all 0.3s ease;
+  }
+
+  .card-container:has(> div:hover) > div:not(:hover) {
+    scale: 0.95;
+    opacity: 0.7;
+  }
+
+  .card-container > div:hover {
+    scale: 1.05;
+    z-index: 10;
+  }
   
   /* Skill item animation */
   .skill-item-enter {

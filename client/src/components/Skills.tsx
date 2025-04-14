@@ -149,7 +149,7 @@ export default function Skills() {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto card-container">
           <motion.div 
             className="skill-text p-6 bg-gray-800 rounded-lg shadow-md border border-gray-700 transition-all duration-300"
             whileHover={{ 
