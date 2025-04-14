@@ -14,10 +14,16 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoplayPlugin from "embla-carousel-autoplay";
 
 export default function Education() {
-  const [emblaRef] = useEmblaCarousel(
-    { loop: true }, 
-    [AutoplayPlugin({ delay: 4000, stopOnInteraction: false })]
-  );
+  const options = { loop: true };
+  const [emblaRef] = useEmblaCarousel(options, [
+    AutoplayPlugin({
+      delay: 3000,
+      stopOnLastSnap: false,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false,
+      rootNode: (emblaRoot) => emblaRoot.parentElement,
+    })
+  ]);
 
   const educationItems = [
     {
