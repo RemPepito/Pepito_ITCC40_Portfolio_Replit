@@ -29,7 +29,7 @@ export default function Header() {
   };
 
   return (
-    <header className="relative h-screen flex items-center justify-center overflow-hidden pt-16 bg-gray-950"> {/* Added bg-gray-950 */}
+    <header className="relative h-screen flex items-center justify-center overflow-hidden pt-16 bg-background"> {/* Added bg-gray-950 */}
       <div className="absolute top-10 right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
       <div className="container mx-auto px-6 z-10">
@@ -51,7 +51,7 @@ export default function Header() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground"
             >
               Remwell B. Pepito
             </motion.h1>

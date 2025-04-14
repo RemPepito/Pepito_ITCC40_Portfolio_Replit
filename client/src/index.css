@@ -92,7 +92,7 @@
 
 @layer components {
   .monitor-frame {
-    @apply relative rounded-lg p-4 bg-secondary shadow-xl;
+    @apply relative rounded-lg p-4 bg-card shadow-xl;
     perspective: 1000px;
     transform-style: preserve-3d;
   }
