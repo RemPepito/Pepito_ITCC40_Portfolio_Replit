@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaSun, FaMoon } from "react-icons/fa";
 import profileImage from "@assets/image_1744644139845.png";
 import { useEffect, useState } from "react";
+import { Switch } from "./ui/switch";
 
 export default function Header() {
   const hellos = [
@@ -77,9 +78,14 @@ export default function Header() {
               >
                 Get Started
               </button>
-              <button className="px-8 py-3 border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-colors">
-                Watch Intro
-              </button>
+              <div className="flex items-center gap-2 px-4 py-2 border border-primary rounded-lg">
+                <FaSun className="text-primary" />
+                <Switch 
+                  onCheckedChange={(checked) => document.documentElement.classList.toggle('dark', checked)}
+                  className="data-[state=checked]:bg-primary"
+                />
+                <FaMoon className="text-primary" />
+              </div>
             </motion.div>
           </div>
           <motion.div
