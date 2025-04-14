@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Skills from "@/components/Skills";
-import Education from "@/components/Education";
 import AdminSkills from "@/components/AdminSkills";
 import Projects from "@/components/Projects";
 import Organizations from "@/components/Organizations";
@@ -65,7 +64,6 @@ export default function Home() {
       
       <Header />
       <Skills />
-      <Education />
       <Projects />
       <Organizations />
       <AdminSkills />
