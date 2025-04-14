@@ -1,8 +1,7 @@
+
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
-import { 
-  FaGraduationCap, FaSchool, FaCertificate, FaAward, FaUniversity
-} from "react-icons/fa";
+import { FaGraduationCap, FaSchool, FaCertificate, FaAward, FaUniversity } from "react-icons/fa";
 
 export default function Education() {
   const educationItems = [
@@ -56,23 +55,30 @@ export default function Education() {
   return (
     <AnimatedSection id="education" className="py-24 bg-gray-950">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative fade-in-section text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 relative text-white">
           <span className="text-primary">Education</span> & Certifications
         </h2>
-        <div className="max-w-6xl mx-auto relative" data-parallax="0.1">
+        <div className="max-w-6xl mx-auto relative">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {educationItems.map((item, index) => (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.7, 
-                  delay: index * 0.1,
-                  ease: "easeOut"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, margin: "-100px" }}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { 
+                      duration: 0.7, 
+                      delay: index * 0.1,
+                      ease: "easeOut"
+                    }
+                  }
                 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="relative p-6 rounded-xl bg-gray-800 border border-gray-700 shadow-lg group fade-in-section hover:border-primary/40 transition-all duration-300"
+                className="relative p-6 rounded-xl bg-gray-800 border border-gray-700 shadow-lg group hover:border-primary/40 transition-all duration-300"
                 whileHover={{ 
                   scale: 1.02,
                   boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)"

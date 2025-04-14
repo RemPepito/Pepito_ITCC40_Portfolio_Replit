@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Skills from "@/components/Skills";
 import AdminSkills from "@/components/AdminSkills";
 import Projects from "@/components/Projects";
-import Organizations from "@/components/Organizations";
+import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useEffect, useRef } from "react";
@@ -65,8 +65,8 @@ export default function Home() {
       <Header />
       <Skills />
       <Projects />
-      <Organizations />
       <AdminSkills />
+      <Education />
       <Contact />
       <Footer />
     </motion.div>
