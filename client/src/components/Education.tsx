@@ -34,16 +34,6 @@ export default function Education() {
     }
   }, [emblaApi]);
 
-  useEffect(() => {
-    if (!api) return;
-    
-    if (isHovered) {
-      autoplay.stop();
-    } else {
-      autoplay.reset();
-      autoplay.play();
-    }
-  }, [api, isHovered]);
 
   const educationItems = [
     {
