@@ -3,17 +3,17 @@ ere’s a simple, step-by-step tutorial to run your Resume Portfolio app on Wind
 
 1. Open your terminal and go to your project folder
    
-**powershell**
+** example: cd "C:\Users\remwe\Downloads\ResumePortfolio"**
 
-3. Install all dependencies
+2. Install all dependencies
 
 **npm install**
 
-4. Start the development server
+3. Start the development server
 
 **npm run dev**
 
-5. Open your browser and go to
+4. Open your browser and go to
 
 [http://127.0.0.1](http://127.0.0.1):5000
 That’s it!
