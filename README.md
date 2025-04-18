@@ -3,7 +3,7 @@ ere’s a simple, step-by-step tutorial to run your Resume Portfolio app on Wind
 
 1. Open your terminal and go to your project folder
    
-** example: cd "C:\Users\remwe\Downloads\ResumePortfolio"**
+** example: cd "C:\Users\remwe\Downloads\ResumePortfolio" **
 
 2. Install all dependencies
 
